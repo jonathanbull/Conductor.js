@@ -1,0 +1,118 @@
+<div class="page-header">
+    <h1>Conductor.js Example App</h1>
+</div>
+<p class="lead">You are <span class="text-danger">offline!</span></p>
+
+<div id="mhBc">
+    <section>
+    </section>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <section>
+            <h2>Your Library</h2>
+        </section>
+
+        <article>
+            <div id="publication-content">
+
+            </div>
+        </article>
+    </div>
+</div>
+
+<script src="/javascripts/external/handlebars-v1.3.0.js"></script>
+<script src="/javascripts/external/jquery-1.11.0.min.js"></script>
+<script src="/javascripts/external/promise-4.0.0.js"></script>
+<script src="/javascripts/conductor.min.js"></script>
+<script src="/javascripts/controllers/online-controller.js"></script>
+<script src="/javascripts/controllers/offline-controller.js"></script>
+<script src="/javascripts/models/article.js"></script>
+<script src="/javascripts/models/image.js"></script>
+<script src="/javascripts/models/publication.js"></script>
+<script src="/javascripts/service/user-service.js"></script>
+<script src="/javascripts/config.js"></script>
+<script src="/javascripts/offline-app.js"></script>
+
+<script id="index-template" type="text/x-handlebars-template">
+    \{{#each publications}}
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#/\{{ id }}">
+                    \{{#if image}}
+                        \{{{call image image.asImageTag}}}
+                    \{{else}}
+                        <img class="img-rounded" width="100%" alt src="/images/placeholder-medium.jpg">
+                    \{{/if}}
+                </a>
+            </div>
+            <div class="col-md-8 pull-left">
+                <a href="#/\{{ id }}">
+                    <h3>\{{ title }}</h3>
+                </a>
+                <p>\{{{ shortDescription }}}</p>
+            </div>
+        </div>
+    \{{/each}}
+</script>
+
+<script id="publication-index-template" type="text/x-handlebars-template">
+    \{{#each articles}}
+        <div class="row">
+            <div class="col-md-3">
+                <a href="#/\{{ publication }}/\{{ id }}">
+                    \{{#if image}}
+                        \{{{call image image.asImageTag}}}
+                    \{{else}}
+                        <img class="img-rounded" width="100%" alt src="/images/placeholder-medium.jpg">
+                    \{{/if}}
+                </a>
+            </div>
+            <div class="col-md-8 pull-left">
+                <a href="#/\{{ publication }}/\{{ id }}">
+                    <h3>\{{ title }}</h3>
+                </a>
+                <p>\{{{ standfirst }}}</p>
+            </div>
+        </div>
+    \{{/each}}
+</script>
+
+<script id="breadcrumbs-template" type="text/x-handlebars-template">
+    <ul id="xi-breadcrumbs" class="list-inline">
+        \{{#each items}}
+            \{{#if link}}
+                <li><a href="\{{ link }}">\{{ title }}</a></li>
+            \{{else}}
+                <li>\{{ title }}</li>
+            \{{/if}}
+        \{{/each}}
+    </ul>
+</script>
+
+<script id="publication-template" type="text/x-handlebars-template">
+    <div class="row">
+        <div class="col-md-8">
+            <div id="article-\{{ article.articleSortOrder }}" class="article">
+                <div class="quick-navigation">
+                    \{{#if previousArticle}}
+                        <a href="#/\{{article.publication}}/\{{previousArticle.id}}" class="prev">← Previous</a>
+                    \{{else}}
+                        <a class="prev disabled">← Previous</a>
+                    \{{/if}}
+                    <div>|</div>
+                    \{{#if nextArticle}}
+                        <a href="#/\{{article.publication}}/\{{nextArticle.id}}" class="next">Next →</a>
+                    \{{else}}
+                        <a class="next disabled">Next →</a>
+                    \{{/if}}
+                </div>
+                    \{{#if article.image}}
+                        \{{{call article.image article.image.asImageTag}}}
+                    \{{/if}}
+                \{{{article.text}}}
+            </div>
+        </div>
+    </div>
+</script>

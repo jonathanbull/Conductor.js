@@ -1,0 +1,28 @@
+CACHE MANIFEST
+# v3
+
+# Explicitly cached 'master entries'.
+CACHE:
+/stylesheets/style.css
+/stylesheets/bootstrap.css
+/images/placeholder-medium.jpg
+/javascripts/external/handlebars-v1.3.0.js
+/javascripts/external/jquery-1.11.0.min.js
+/javascripts/external/promise-4.0.0.js
+/javascripts/conductor.min.js
+/javascripts/controllers/online-controller.js
+/javascripts/controllers/offline-controller.js
+/javascripts/models/article.js
+/javascripts/models/image.js
+/javascripts/models/publication.js
+/javascripts/service/user-service.js
+/javascripts/config.js
+/javascripts/offline-app.js
+/javascripts/online-app.js
+
+NETWORK:
+*
+
+# Fallback resources if network connection is unavailable
+FALLBACK:
+/ /offline

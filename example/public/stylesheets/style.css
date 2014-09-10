@@ -1,0 +1,39 @@
+.updateCompleteNotice {
+    border-style:solid;
+    border-width:1px;
+    text-align:center;
+    margin-bottom: 16px;
+    color: #333333;
+}
+.updateCompleteNotice p {
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+a {
+    color: #c60c30;
+}
+.current_page_item a {
+    color: #333;
+}
+.quick-navigation {
+    display: inline-block;
+    margin: 16px 0;
+    text-align: center;
+}
+.quick-navigation > * {
+    margin: 0 8px 0 0;
+    display: inline-block;
+    float: left;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}
+.quick-navigation span {
+    font-size: 1.4rem;
+}
+.quick-navigation .disabled {
+    color: black;
+    opacity: 0.5;
+}
+#publication-content {
+    margin-bottom: 150px
+}

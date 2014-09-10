@@ -1,0 +1,72 @@
+<iframe src="/offline-iframe" style="position:absolute;top:-999em;visibility:hidden"></iframe>
+
+<div class="row">
+  <div class="col-md-8">
+      <div class="page-header">
+          <h1>Conductor.js Example App</h1>
+      </div>
+      <p class="lead ">You are <span class="text-success">online!</span></p>
+      <p class="lead">
+          This is the example application for Conductor.js, showing you one possible use case for the application.
+          The publications and articles below will be downloaded onto an offline database. The required application files
+          will also be downloaded using appcache.
+          When the download is complete, try turning off the server and reloading this page.
+      </p>
+
+      <div id="update-notice"></div>
+
+      <h2>Your Library</h2>
+
+      <h3>Publications</h3>
+      <ul>
+          {{#each publications}}
+              <li>
+                  <div class="pictureCaption">
+                      <div>
+                          <h4>{{ title }}</h4>
+                          <p>{{{ shortDescription }}}</p>
+                      </div>
+                  </div>
+              </li>
+          {{/each}}
+      </ul>
+
+      <h3>Articles</h3>
+      <ul>
+          {{#each articles}}
+              <li>
+                  <div class="pictureCaption">
+                      <div>
+                          <h4>{{ title }}</h4>
+                          <p>{{{ standfirst }}}</p>
+                      </div>
+                  </div>
+              </li>
+          {{/each}}
+      </ul>
+  </div>
+</div>
+
+<template id="updating">
+    <p>Updating your Library content</p>
+</template>
+
+<template id="updating-complete">
+    <div class="updateCompleteNotice"><p>The update of your Library is now complete</p></div>
+</template>
+
+<template id="updating-error">
+    <div class="updateCompleteNotice"><p>There was a problem updating your Library</p></div>
+</template>
+
+<script src="/javascripts/external/handlebars-v1.3.0.js"></script>
+<script src="/javascripts/external/jquery-1.11.0.min.js"></script>
+<script src="/javascripts/external/promise-4.0.0.js"></script>
+<script src="/javascripts/conductor.min.js"></script>
+<script src="/javascripts/controllers/online-controller.js"></script>
+<script src="/javascripts/models/article.js"></script>
+<script src="/javascripts/models/image.js"></script>
+<script src="/javascripts/models/publication.js"></script>
+<script src="/javascripts/service/user-service.js"></script>
+<script src="/javascripts/config.js"></script>
+<script src="/javascripts/online-app.js"></script>
