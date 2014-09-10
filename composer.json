@@ -1,0 +1,14 @@
+{
+    "name": "royal-opera-house/conductor",
+    "type": "library",
+    "description": "Conductor.js is a small, lightweight framework made to help create offline web applications.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Scutt",
+            "email": "ben.scutt@roh.org.uk",
+            "homepage": "http://www.roh.org.uk",
+            "role": "Developer"
+        }
+    ]
+}
