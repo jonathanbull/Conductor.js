@@ -7,6 +7,8 @@ interface and it allows you to use Models to represent your data.
 
 It is used by the Royal Opera House for our Offline Hybrid App.
 
+This project was supported by the [Digital R&D Fund for the Arts.](http://artsdigitalrnd.org.uk/projects/royal-opera-house/)
+
 ##Table of Contents
 
 - [Examples](#examples)
